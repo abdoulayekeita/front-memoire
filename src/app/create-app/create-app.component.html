@@ -1,0 +1,132 @@
+<ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.appState">
+  <ng-container *ngSwitchCase="DataState.LOADING_STATE">
+
+  </ng-container>
+  <ng-container *ngSwitchCase="DataState.LOADED_STATE">
+
+  </ng-container>
+  <ng-container *ngSwitchCase="DataState.ERROR_STATE">
+
+  </ng-container>
+</ng-container>
+<div class="app">
+  <div class="mobile-menu md:hidden">
+    <div class="mobile-menu-bar">
+      <a href="" class="flex mr-auto">
+        <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="assets/dist/images/logo.svg">
+      </a>
+      <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
+    </div>
+    <ul class="border-t border-theme-24 py-5 hidden">
+      <li>
+        <a href="index.html" class="menu menu--active">
+          <div class="menu__icon"> <i data-feather="home"></i> </div>
+          <div class="menu__title">Tableau de board</div>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+  <!-- END: Mobile Menu -->
+  <div class="flex">
+    <!-- BEGIN: Side Menu -->
+    <nav class="side-nav">
+      <a href="" class="intro-x flex items-center pl-5 pt-4">
+        <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="assets/dist/images/logo.svg">
+        <span class="hidden xl:block text-white text-lg ml-3">E-<span class="font-medium">PAYEMENT</span> </span>
+      </a>
+      <div class="side-nav__devider my-6"></div>
+      <ul>
+        <li>
+          <a href="index.html" class="side-menu side-menu--active">
+            <div class="side-menu__icon"> <i data-feather="home"></i> </div>
+            <div class="side-menu__title"> Tableau de board </div>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="side-menu">
+            <div class="side-menu__icon"> <i data-feather="box"></i> </div>
+            <div class="side-menu__title"> Mes applications </div>
+          </a>
+
+        </li>
+
+      </ul>
+    </nav>
+    <!-- END: Side Menu -->
+    <!-- BEGIN: Content -->
+    <div class="content">
+      <!-- BEGIN: Top Bar -->
+      <div class="top-bar">
+        <!-- BEGIN: Breadcrumb -->
+        <div class="-intro-x breadcrumb mr-auto hidden sm:flex"> <a href="" class="">Application</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Tableau de bord</a> </div>
+        <!-- END: Breadcrumb -->
+        <!-- BEGIN: Search -->
+        <div class="intro-x relative mr-3 sm:mr-6">
+          <div class="search hidden sm:block">
+            <input type="text" class="search__input input placeholder-theme-13" placeholder="Search...">
+            <i data-feather="search" class="search__icon dark:text-gray-300"></i>
+          </div>
+          <a class="notification sm:hidden" href=""> <i data-feather="search" class="notification__icon dark:text-gray-300"></i> </a>
+          <div class="search-result">
+          </div>
+        </div>
+      </div>
+      <!-- END: Top Bar -->
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 xxl:col-span-3 xxl:border-l border-theme-5 -mb-10 pb-10">
+          <div class="intro-y flex items-center mt-8">
+            <h2 class="text-lg font-medium mr-auto">
+              Creaton de l'application
+            </h2>
+          </div>
+          <div class="grid grid-cols-12 gap-6 mt-5">
+            <div class="intro-y col-span-12 lg:col-span-6">
+              <!-- BEGIN: Form Layout -->
+              <div class="intro-y box p-5">
+                <div>
+                  <label class="text-white">Nom de l'applicaton</label>
+                  <input type="text" class="input w-full border mt-2" placeholder="nom">
+                </div>
+                <div>
+                  <label class="text-white">Url du callback</label>
+                  <input type="text" class="input w-full border mt-2" placeholder="callback">
+                </div>
+                <div class="mt-3">
+                  <label class="text-white">providers</label>
+                  <div class="mt-2">
+                    <select data-placeholder="Select your favorite actors" class="tail-select w-full" multiple>
+                      <option value="1" selected>Orange money sénégal</option>
+                      <option value="2">free money</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <label class="text-white">Mode de l'application</label>
+                  <div class="mt-2">
+                    <input type="checkbox" class="input input--switch border">
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <label>Description</label>
+                  <div class="mt-2">
+                    <div data-simple-toolbar="true" class="editor" name="description">
+                      <p>description</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-right mt-5">
+                  <button type="button" class="button bg-theme-1 text-white">Créer l'application</button>
+                </div>
+              </div>
+              <!-- END: Form Layout -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END: Content -->
+  </div>
+  <!-- BEGIN: Dark Mode Switcher-->
+</div>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>

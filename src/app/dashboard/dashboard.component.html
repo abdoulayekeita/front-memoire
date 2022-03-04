@@ -1,0 +1,133 @@
+<div class="app">
+  <div class="mobile-menu md:hidden">
+    <div class="mobile-menu-bar">
+      <a href="" class="flex mr-auto">
+        <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="assets/dist/images/logo.svg">
+      </a>
+      <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
+    </div>
+    <ul class="border-t border-theme-24 py-5 hidden">
+      <li>
+        <a href="index.html" class="menu ">
+          <div class="menu__icon"> <i data-feather="home"></i> </div>
+          <div class="menu__title">Tableau de board</div>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+  <!-- END: Mobile Menu -->
+  <div class="flex">
+    <!-- BEGIN: Side Menu -->
+    <nav class="side-nav">
+      <a href="" class="intro-x flex items-center pl-5 pt-4">
+        <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="assets/dist/images/logo.svg">
+        <span class="hidden xl:block text-white text-lg ml-3">E-<span class="font-medium">PAYEMENT</span> </span>
+      </a>
+      <div class="side-nav__devider my-6"></div>
+      <ul>
+        <li>
+          <a href="index.html" class="side-menu ">
+            <div class="side-menu__icon"> <i data-feather="home"></i> </div>
+            <div class="side-menu__title"> Tableau de board </div>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="side-menu side-menu--active">
+            <div class="side-menu__icon"> <i data-feather="box"></i> </div>
+            <div class="side-menu__title"> Mes applications </div>
+          </a>
+
+        </li>
+
+      </ul>
+    </nav>
+    <!-- END: Side Menu -->
+    <!-- BEGIN: Content -->
+    <div class="content">
+      <!-- BEGIN: Top Bar -->
+      <div class="top-bar">
+        <!-- BEGIN: Breadcrumb -->
+        <div class="-intro-x breadcrumb mr-auto hidden sm:flex"> <a href="" class="">Application</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i>
+          <a href="" class="breadcrumb--active">Tableau de bord</a>
+        </div>
+        <!-- END: Breadcrumb -->
+        <!-- BEGIN: Search -->
+        <div class="intro-x relative mr-3 sm:mr-6">
+          <div class="search hidden sm:block">
+            <input type="text" class="search__input input placeholder-theme-13" placeholder="Search...">
+            <i data-feather="search" class="search__icon dark:text-gray-300"></i>
+          </div>
+          <a class="notification sm:hidden" href=""> <i data-feather="search" class="notification__icon dark:text-gray-300"></i> </a>
+          <div class="search-result">
+          </div>
+        </div>
+        <!-- END: Search -->
+        <!-- BEGIN: Notifications -->
+        <!-- END: Notifications -->
+        <!-- BEGIN: Account Menu -->
+        <!-- END: Account Menu -->
+      </div>
+      <!-- END: Top Bar -->
+
+      <div class="grid grid-cols-12 gap-6">
+
+        <div class="col-span-12 xxl:col-span-3 xxl:border-l border-theme-5 -mb-10 pb-10">
+          <div class="col-span-12 xl:col-span-4 mt-6">
+            <div class="cols-6">
+<!--              <div class="intro-y flex items-center h-10">-->
+                <h2 class="text-lg font-medium truncate mr-5">
+                  Liste des applications
+                </h2>
+              <button class="button button--lg w-full text-white bg-theme-1  ">Créer une application</button>
+
+              <!--              </div>-->
+            </div>
+            <div class="mt-5">
+              <div class="intro-y">
+                <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
+                  <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
+                    <img alt="Midone Tailwind HTML Admin Template" src="assets/dist/images/profile-4.jpg">
+                  </div>
+                  <div class="ml-4 mr-auto">
+                    <div class="font-medium">First application</div>
+                    <div class="text-gray-600 text-xs">2 janvier 2022</div>
+                  </div>
+                  <div class="py-1 px-2 rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium">voir</div>
+                </div>
+              </div>
+              <div class="intro-y">
+                <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
+                  <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
+                    <img alt="Midone Tailwind HTML Admin Template" src="assets/dist/images/profile-4.jpg">
+                  </div>
+                  <div class="ml-4 mr-auto">
+                    <div class="font-medium">First application</div>
+                    <div class="text-gray-600 text-xs">2 janvier 2022</div>
+                  </div>
+                  <div class="py-1 px-2 rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium">voir</div>
+                </div>
+              </div>
+              <div class="intro-y">
+                <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
+                  <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
+                    <img alt="Midone Tailwind HTML Admin Template" src="assets/dist/images/profile-4.jpg">
+                  </div>
+                  <div class="ml-4 mr-auto">
+                    <div class="font-medium">First application</div>
+                    <div class="text-gray-600 text-xs">2 janvier 2022</div>
+                  </div>
+                  <div class="py-1 px-2 rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium">voir</div>
+                </div>
+              </div>
+              <a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600">Voir plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END: Content -->
+  </div>
+  <!-- BEGIN: Dark Mode Switcher-->
+</div>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
