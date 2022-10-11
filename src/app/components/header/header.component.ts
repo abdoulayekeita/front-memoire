@@ -1,20 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { AuthService } from '../../service/auth/auth.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewChecked {
   currentItem = 'Television';
-  constructor() {
+  isDashbord: boolean;
+  isLoggedIn = false;
+  constructor(private authService: AuthService, private router: Router) {
      this.loadScripts();
      this.loadCss();
+     this.isDashbord = this.authService.IS_DASHBORD;
    }
-
-  ngOnInit(): void {
+  ngAfterViewChecked(): void {
+    console.log("kkkkkkkkkkkkkkkkkkkkkkkkk")
+    this.isDashbord = this.authService.IS_DASHBORD;
+    console.log(this.isDashbord)
   }
 
+  ngOnInit(): void {
+    console.log("iniheader")
+    console.log(this.isDashbord)
+    this.isLoggedIn = this.authService.isUserLoggedIn();
+    console.log('menu ->' + this.isLoggedIn);
+  }
+  ngAfterContentInit(): void {
+    console.log("iniafterllll")
+    console.log(this.isDashbord)
+  }
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/test']);
+
+  }
  loadScripts() {
       const dynamicScripts = [
        '/assets/vendor/aos/aos.js',

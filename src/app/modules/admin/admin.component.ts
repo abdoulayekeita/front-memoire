@@ -1,18 +1,31 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, AfterViewChecked } from '@angular/core';
+import { observable, Observable } from 'rxjs';
+import { AuthService } from '../../service/auth/auth.service'
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css']
 })
-export class DashboardComponent implements OnInit {
-   @Input() item = '';
-  constructor() {
+export class AdminComponent implements OnInit {
+  @Output() isDashbord = new EventEmitter<boolean>();
+  constructor(private authService: AuthService) {
      this.loadScripts();
      this.loadCss();
+     //this.isDashbord = this.authService.IS_DASHBORD;
    }
+  
    ngOnInit(): void {
+    this.authService.changeState(true);
+    this.isDashbord.emit(true);
+    console.log("iniaaaa")
+   // console.log(this.isDashbord)
    }
+   ngOnDestroy() {
+    console.log("iniaaammmmmmmmmmmmmma")
+
+   this.isDashbord.emit(false);
+  }
  loadScripts() {
        const dynamicScripts = [
         '/assets/dist/js/app.js',
@@ -38,5 +51,4 @@ export class DashboardComponent implements OnInit {
              document.getElementsByTagName('head')[0].appendChild(node);
            }
          }
-
 }

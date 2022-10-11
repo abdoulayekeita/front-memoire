@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  isDashbord = false;
+
   title = 'front-memoire';
+  onchangeDashbord(isDashbord: boolean) {
+   this.isDashbord = isDashbord;
+ }
 }

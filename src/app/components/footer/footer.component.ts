@@ -1,18 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { AuthService } from '../../service/auth/auth.service'
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit, AfterViewChecked {
+  isDashbord: boolean;
 
-  constructor() {
+  constructor(private authService: AuthService) {
     this.loadScripts();
     this.loadCss();
+    this.isDashbord = this.authService.IS_DASHBORD;
+  }
+  ngAfterViewChecked(): void {
+    this.isDashbord = this.authService.IS_DASHBORD;
   }
 
   ngOnInit(): void {
+  //  console.log("ini")
+   // console.log(this.isDashbord)
   }
 
 loadScripts() {

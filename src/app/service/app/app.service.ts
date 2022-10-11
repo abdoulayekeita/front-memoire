@@ -2,18 +2,21 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { observable, Observable, Subscriber, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
-import { Status } from '../enum/status.enum';
-import { App } from '../interface/app';
-import { CustomResponse } from '../interface/custom-response';
+import { Status } from '../../enum/status.enum';
+import { App } from '../../interface/app';
+import { CustomResponse } from '../../interface/custom-response';
+import { OnInit } from '@angular/core';
 
 @Injectable({ providedIn: 'root'})
-export class AppService {
-  private readonly apiUrl: "http://localhost:8088/api";
- 
-  constructor(private http: HttpClient) { }
+export class AppService  {
+  private readonly  apiUrl:string;
+
+  constructor(private http: HttpClient) {
+    this.apiUrl = "http://localhost:8088/api";
+   }
 
   apps$ = <Observable<CustomResponse>>
-  this.http.get<CustomResponse>(`${this.apiUrl}/app/all`)
+  this.http.get<CustomResponse>(`http://localhost:8088/api/app/all`)
   .pipe(
     tap(console.log),
     catchError(this.handleError)
@@ -38,7 +41,7 @@ export class AppService {
     Subscriber => {
       console.log(response);
       Subscriber.next(
-        
+
       )
     }
   )
@@ -51,6 +54,7 @@ export class AppService {
     console.log(error)
     return throwError(`Àn error occured - Error code: ${error.status}`);
   }
+
 }
 
 
